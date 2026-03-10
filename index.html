@@ -1,13 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Rentagone</title>
+<title>RENTAGONE</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0f0f0f;
+color:white;
+}
+
+header{
+background:black;
+padding:20px;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+margin-right:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:80px 20px;
+max-width:900px;
+margin:auto;
+}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(#000,#111);
+}
+
+button{
+padding:12px 25px;
+font-size:16px;
+border:none;
+background:#00ff99;
+color:black;
+border-radius:6px;
+cursor:pointer;
+}
+
+.card{
+background:#1a1a1a;
+padding:20px;
+margin:15px 0;
+border-radius:8px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:black;
+margin-top:50px;
+}
+</style>
 </head>
 
 <body>
 
+<header>
+<nav>
+<a href="#home">Home</a>
+<a href="#prices">Prices</a>
+<a href="#how">How To Buy</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
 <h1>RENTAGONE</h1>
-<p>Welcome to the official site.</p>
+<p>Cheap Robux Store</p>
+<button onclick="location.href='#prices'">Buy Robux</button>
+</div>
+
+<section id="prices">
+<h2>Robux Prices</h2>
+
+<div class="card">
+<h3>400 Robux</h3>
+<p>$2</p>
+</div>
+
+<div class="card">
+<h3>800 Robux</h3>
+<p>$4</p>
+</div>
+
+<div class="card">
+<h3>1700 Robux</h3>
+<p>$8</p>
+</div>
+
+</section>
+
+<section id="how">
+<h2>How It Works</h2>
+
+<div class="card">
+<p>1. Join our Roblox group</p>
+</div>
+
+<div class="card">
+<p>2. Wait for the 14-day Roblox payout eligibility</p>
+</div>
+
+<div class="card">
+<p>3. Send payment</p>
+</div>
+
+<div class="card">
+<p>4. Robux delivered</p>
+</div>
+
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+
+<div class="card">
+<p>Discord: YOURDISCORD</p>
+</div>
+
+<div class="card">
+<p>Join Roblox Group</p>
+<button onclick="window.open('https://roblox.com')">Join Group</button>
+</div>
+
+</section>
+
+<footer>
+<p>© RENTAGONE</p>
+</footer>
 
 </body>
 </html>
