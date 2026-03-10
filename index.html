@@ -1,57 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RENTAGONE</title>
 
 <style>
+
 body{
 margin:0;
-font-family:Arial;
-background:#0f0f0f;
+background:#0b0b0b;
 color:white;
+font-family:Arial;
+scroll-behavior:smooth;
 }
 
 header{
-background:black;
-padding:20px;
-position:sticky;
+position:fixed;
 top:0;
+width:100%;
+background:black;
+padding:15px;
+z-index:100;
+}
+
+nav{
+text-align:center;
 }
 
 nav a{
 color:white;
-margin-right:20px;
+margin:0 15px;
 text-decoration:none;
 font-weight:bold;
 }
 
-section{
-padding:80px 20px;
-max-width:900px;
-margin:auto;
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-.hero{
-text-align:center;
-padding:120px 20px;
-background:linear-gradient(#000,#111);
+.hero img{
+width:300px;
+}
+
+.hero h2{
+color:#00ffd0;
+font-weight:normal;
 }
 
 button{
 padding:12px 25px;
-font-size:16px;
+background:#00ffd0;
 border:none;
-background:#00ff99;
 color:black;
-border-radius:6px;
+font-weight:bold;
 cursor:pointer;
+margin-top:20px;
+}
+
+section{
+padding:100px 20px;
+max-width:900px;
+margin:auto;
 }
 
 .card{
-background:#1a1a1a;
+background:#151515;
 padding:20px;
 margin:15px 0;
 border-radius:8px;
+}
+
+.price{
+font-size:20px;
+color:#00ffd0;
 }
 
 footer{
@@ -60,6 +86,7 @@ padding:40px;
 background:black;
 margin-top:50px;
 }
+
 </style>
 </head>
 
@@ -67,76 +94,155 @@ margin-top:50px;
 
 <header>
 <nav>
-<a href="#home">Home</a>
 <a href="#prices">Prices</a>
 <a href="#how">How To Buy</a>
+<a href="#calculator">Calculator</a>
+<a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
-<div class="hero" id="home">
-<h1>RENTAGONE</h1>
-<p>Cheap Robux Store</p>
-<button onclick="location.href='#prices'">Buy Robux</button>
+<div class="hero">
+
+<img src="logo.png">
+
+<h2>Trusted Robux Marketplace</h2>
+
+<button onclick="document.getElementById('prices').scrollIntoView()">View Prices</button>
+
 </div>
 
 <section id="prices">
-<h2>Robux Prices</h2>
+
+<h1>Robux Prices</h1>
 
 <div class="card">
-<h3>400 Robux</h3>
-<p>$2</p>
+100 Robux
+<div class="price">75 BDT</div>
 </div>
 
 <div class="card">
-<h3>800 Robux</h3>
-<p>$4</p>
+500 Robux
+<div class="price">375 BDT</div>
 </div>
 
 <div class="card">
-<h3>1700 Robux</h3>
-<p>$8</p>
+1000 Robux
+<div class="price">750 BDT</div>
+</div>
+
+<div class="card">
+5000 Robux
+<div class="price">3750 BDT</div>
+</div>
+
+<div class="card">
+10000 Robux
+<div class="price">7500 BDT</div>
 </div>
 
 </section>
 
 <section id="how">
-<h2>How It Works</h2>
+
+<h1>How Buying Works</h1>
 
 <div class="card">
-<p>1. Join our Roblox group</p>
+1. Join our Roblox group
 </div>
 
 <div class="card">
-<p>2. Wait for the 14-day Roblox payout eligibility</p>
+2. Wait 14 days to become payout eligible
 </div>
 
 <div class="card">
-<p>3. Send payment</p>
+3. Contact us on Discord
 </div>
 
 <div class="card">
-<p>4. Robux delivered</p>
+4. Send payment
+</div>
+
+<div class="card">
+5. Robux delivered same day
+</div>
+
+</section>
+
+<section id="calculator">
+
+<h1>Robux Calculator</h1>
+
+<input id="robuxInput" placeholder="Enter Robux amount">
+
+<button onclick="calc()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+
+function calc(){
+
+let r = document.getElementById("robuxInput").value
+let price = r * 0.75
+
+document.getElementById("result").innerText =
+"Price: " + price + " BDT"
+
+}
+
+</script>
+
+</section>
+
+<section id="faq">
+
+<h1>FAQ</h1>
+
+<div class="card">
+Payment methods: Bkash, Nagad, Rocket, Crypto
+</div>
+
+<div class="card">
+Delivery: Same day, usually instant
+</div>
+
+<div class="card">
+Preorders are allowed
+</div>
+
+<div class="card">
+Always confirm price before sending payment
 </div>
 
 </section>
 
 <section id="contact">
-<h2>Contact</h2>
+
+<h1>Contact</h1>
 
 <div class="card">
-<p>Discord: YOURDISCORD</p>
+Discord: NAONIKO / ofensic67
 </div>
 
 <div class="card">
-<p>Join Roblox Group</p>
-<button onclick="window.open('https://roblox.com')">Join Group</button>
+<a href="https://discord.gg/vEsmfYv5xp">
+Join our Discord
+</a>
+</div>
+
+<div class="card">
+<a href="https://www.roblox.com/share/g/821984461">
+Join Roblox Group
+</a>
 </div>
 
 </section>
 
 <footer>
-<p>© RENTAGONE</p>
+
+RENTAGONE
+
 </footer>
 
 </body>
