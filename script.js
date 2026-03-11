@@ -1,38 +1,45 @@
-// Robux Calculator
-const robuxInput = document.getElementById('robux-input');
-const priceOutput = document.getElementById('price-output');
+// ROBUX CALCULATOR
+const robuxInput = document.getElementById("robux");
+const priceSpan = document.getElementById("price");
 
-robuxInput.addEventListener('input', () => {
-  const robux = parseInt(robuxInput.value) || 0;
-  const price = robux * 0.75;
-  priceOutput.textContent = price.toFixed(2) + " Tk";
+const rate = 75 / 100; // 100 robux = 75 BDT
+
+if (robuxInput) {
+robuxInput.addEventListener("input", () => {
+let robux = parseFloat(robuxInput.value) || 0;
+let price = robux * rate;
+priceSpan.textContent = price.toFixed(2);
 });
-
-// Demo vouches
-const vouches = [
-  { username: "Denolser1", comment: "Got my 160 Robux quickly, smooth!", rating: 5 },
-  { username: "Denolser2", comment: "560 Robux delivered, happy customer!", rating: 5 }
-];
-
-const vouchesList = document.getElementById('vouches-list');
-vouches.forEach(v => {
-  const div = document.createElement('div');
-  div.classList.add('vouch');
-  div.innerHTML = `<strong>${v.username}</strong>: ${v.comment} (${v.rating}/5)`;
-  vouchesList.appendChild(div);
-});
-// Scroll fade-in
-const faders = document.querySelectorAll('section');
-
-const appearOnScroll = () => {
-  faders.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const screenBottom = window.innerHeight - 100;
-    if(sectionTop < screenBottom){
-      section.classList.add('visible');
-    }
-  });
 }
 
-window.addEventListener('scroll', appearOnScroll);
-appearOnScroll(); // trigger once on load
+
+// SEND ORDER TO DISCORD
+async function sendOrder(){
+
+const username = document.getElementById("username").value;
+const discord = document.getElementById("discord").value;
+const robux = document.getElementById("orderRobux").value;
+const payment = document.getElementById("payment").value;
+
+const webhook = "https://discord.com/api/webhooks/1481295676041072742/ouT3Fc0B-flRl_9BzTqDCNfdPvcY59GGvgd4PqHMTNB-2aEf81qYZGbpRXMcDsUYe57l";
+
+const message = {
+content:
+`📦 NEW RENTAGONE ORDER
+
+👤 Username: ${username}
+💬 Discord: ${discord}
+💰 Robux Amount: ${robux}
+💳 Payment Method: ${payment}`
+};
+
+await fetch(webhook,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(message)
+});
+
+alert("Order submitted! Check Discord.");
+}
