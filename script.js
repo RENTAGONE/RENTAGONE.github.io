@@ -21,3 +21,18 @@ vouches.forEach(v => {
   div.innerHTML = `<strong>${v.username}</strong>: ${v.comment} (${v.rating}/5)`;
   vouchesList.appendChild(div);
 });
+// Scroll fade-in
+const faders = document.querySelectorAll('section');
+
+const appearOnScroll = () => {
+  faders.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const screenBottom = window.innerHeight - 100;
+    if(sectionTop < screenBottom){
+      section.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', appearOnScroll);
+appearOnScroll(); // trigger once on load
