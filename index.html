@@ -1,70 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>💎 RENTAGONE 💎</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💎 RENTAGONE - Cheapest Robux</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-  <h1>💎 RENTAGONE 💎</h1>
-  <p>Cheapest Robux • Fast Delivery • Trusted</p>
-</header>
+    <!-- ========== FLOATING PARTICLES ========== -->
+    <div class="particles" id="particles"></div>
 
-<section class="features animate">
-  <h2>Why Choose Us</h2>
-  <div class="cards">
-    <div class="card">Lowest Prices<br>100 Robux = 75 BDT</div>
-    <div class="card">Fast Delivery<br>Most orders completed within minutes.</div>
-    <div class="card">Trusted<br>Hundreds of successful deliveries.</div>
-  </div>
-</section>
+    <!-- ========== TOAST NOTIFICATIONS ========== -->
+    <div class="toast-container" id="toastContainer"></div>
 
-<section class="calculator animate">
-  <h2>Robux Calculator</h2>
-  <p>You can type values like: 1k • 50k • 1m • 1b</p>
-  <input type="text" id="robuxInput" placeholder="Enter Robux">
-  <p>Price: <span id="priceDisplay">0.00 BDT</span></p>
-</section>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">💎 RENTAGONE</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#vouches">Vouches</a></li>
+        </ul>
+        <div class="nav-btns">
+            <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+            <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
 
-<section class="ordering animate">
-  <h2>How Ordering Works</h2>
-  <ol>
-    <li>Join our Roblox group</li>
-    <li>Wait 14 days</li>
-    <li>Place order on website</li>
-    <li>Pay with Bkash / Nagad / Crypto</li>
-    <li>Receive Robux</li>
-  </ol>
-  <div class="buttons">
-    <a href="login.html"><button>Login / Register</button></a>
-    <a href="order.html"><button>Place Order</button></a>
-    <a href="dashboard.html"><button>Dashboard</button></a>
-  </div>
-</section>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🔥 #1 Trusted Robux Seller in BD</span>
+            <h1>
+                💎 <span class="gradient-text">RENTAGONE</span> 💎
+            </h1>
+            <p class="tagline">Cheapest Robux • Fast Delivery • Trusted</p>
+            <div class="hero-buttons">
+                <a href="order.html" class="btn btn-primary btn-lg">🛒 Order Now</a>
+                <a href="#calculator" class="btn btn-secondary btn-lg">💰 Price Calculator</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="statOrders">500+</span>
+                    <span class="stat-label">Orders Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">⭐ 4.9</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="statRobux">10B+</span>
+                    <span class="stat-label">Robux Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="vouches animate">
-  <h2>Customer Vouches</h2>
-  <div class="vouch" data-delay="0">⭐ Denolserl — Fast delivery 160 Robux</div>
-  <div class="vouch" data-delay="200">⭐ Denotiser2 — 560 Robux delivered</div>
-</section>
+    <!-- ========== FEATURES SECTION ========== -->
+    <section id="features">
+        <div class="section-header animate-on-scroll">
+            <h2>Why Choose <span class="gradient-text">RENTAGONE</span>?</h2>
+            <p>The best Robux buying experience in Bangladesh</p>
+            <div class="section-line"></div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll animate-delay-1">
+                <span class="feature-icon">💸</span>
+                <h3>LOWEST PRICES</h3>
+                <p>100 Robux for just 75 BDT. The cheapest rate you'll find anywhere. Guaranteed.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-2">
+                <span class="feature-icon">⚡</span>
+                <h3>FAST DELIVERY</h3>
+                <p>Get your Robux delivered within minutes after payment confirmation. No waiting around.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-3">
+                <span class="feature-icon">🛡️</span>
+                <h3>100% TRUSTED</h3>
+                <p>500+ successful orders. Real vouches from real customers. Your money is safe with us.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-4">
+                <span class="feature-icon">🎮</span>
+                <h3>EASY PROCESS</h3>
+                <p>Join our group, wait 14 days, place your order. Simple. Clean. No BS.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-1">
+                <span class="feature-icon">💬</span>
+                <h3>DISCORD SUPPORT</h3>
+                <p>24/7 support via Discord. Got a question? We're always online and ready to help.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-2">
+                <span class="feature-icon">📦</span>
+                <h3>PREORDER AVAILABLE</h3>
+                <p>Need a massive amount? Preorder and we'll chunk it out for you. Any amount, any time.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="contact animate">
-  <h2>Contact</h2>
-  <p>Discord Users:</p>
-  <ul>
-    <li>NAONIKO</li>
-    <li>ofensic67</li>
-  </ul>
-  <a href="https://discord.gg/vEsmfYv5xp"><button>Join Server</button></a>
-</section>
+    <!-- ========== CALCULATOR SECTION ========== -->
+    <section id="calculator" class="calculator-section">
+        <div class="section-header animate-on-scroll">
+            <h2>💰 Robux <span class="gradient-text">Calculator</span></h2>
+            <p>Find out exactly how much you'll pay. No hidden fees.</p>
+            <div class="section-line"></div>
+        </div>
+        <div class="calculator-box animate-on-scroll animate-scale">
+            <div class="calc-input-group">
+                <label>Enter Robux Amount</label>
+                <input type="text" class="calc-input" id="calcInput" placeholder="e.g. 1000, 50k, 1m, 1b, 1t">
+            </div>
+            <div class="calc-quick-btns">
+                <button class="calc-quick-btn" data-amount="1000">1K</button>
+                <button class="calc-quick-btn" data-amount="10000">10K</button>
+                <button class="calc-quick-btn" data-amount="50000">50K</button>
+                <button class="calc-quick-btn" data-amount="100000">100K</button>
+                <button class="calc-quick-btn" data-amount="1000000">1M</button>
+                <button class="calc-quick-btn" data-amount="1000000000">1B</button>
+                <button class="calc-quick-btn" data-amount="1000000000000">1T</button>
+            </div>
+            <div class="calc-result">
+                <div class="price-label">Total Price</div>
+                <div class="price-value" id="calcResult">৳0</div>
+                <div class="price-currency">BDT (Bangladeshi Taka)</div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <p>© 2026 RENTAGONE</p>
-</footer>
+    <!-- ========== HOW IT WORKS ========== -->
+    <section id="how-it-works">
+        <div class="section-header animate-on-scroll">
+            <h2>📋 How It <span class="gradient-text">Works</span></h2>
+            <p>4 simple steps to get your Robux</p>
+            <div class="section-line"></div>
+        </div>
+        <div class="steps-container">
+            <div class="step-card animate-on-scroll animate-delay-1">
+                <div class="step-number">1</div>
+                <h3>Join Our Group</h3>
+                <p>Join the Roblox group linked on our Discord server</p>
+                <span class="step-arrow">→</span>
+            </div>
+            <div class="step-card animate-on-scroll animate-delay-2">
+                <div class="step-number">2</div>
+                <h3>Wait 14 Days</h3>
+                <p>Roblox requires a 14-day waiting period for group payouts</p>
+                <span class="step-arrow">→</span>
+            </div>
+            <div class="step-card animate-on-scroll animate-delay-3">
+                <div class="step-number">3</div>
+                <h3>Place Your Order</h3>
+                <p>Use our order page, select amount & payment method</p>
+                <span class="step-arrow">→</span>
+            </div>
+            <div class="step-card animate-on-scroll animate-delay-4">
+                <div class="step-number">4</div>
+                <h3>Receive Robux</h3>
+                <p>Pay via Bkash/Nagad/Rocket/Crypto and get your Robux instantly!</p>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- ========== VOUCHES SECTION ========== -->
+    <section id="vouches">
+        <div class="section-header animate-on-scroll">
+            <h2>⭐ Customer <span class="gradient-text">Vouches</span></h2>
+            <p>Real reviews from real customers</p>
+            <div class="section-line"></div>
+        </div>
+        <div class="vouches-scroll animate-on-scroll">
+            <!-- Vouch 1 -->
+            <div class="vouch-card">
+                <div class="vouch-header">
+                    <div class="vouch-avatar">S</div>
+                    <div class="vouch-name">ShadowX_BD</div>
+                </div>
+                <div class="vouch-stars">⭐⭐⭐⭐⭐</div>
+                <p class="vouch-text">Got 50K Robux in under 5 minutes. Cheapest rate I've ever seen. Will order again for sure! 🔥</p>
+                <span class="vouch-robux">50,000 R$</span>
+            </div>
+            <!-- Vouch 2 -->
+            <div class="vouch-card">
+                <div class="vouch-header">
+                    <div class="vouch-avatar">R</div>
+                    <div class="vouch-name">RizwanGamer</div>
+                </div>
+                <div class="vouch-stars">⭐⭐⭐⭐⭐</div>
+                <p class="vouch-text">Preordered 1M Robux, delivered in chunks exactly as promised. Super smooth process. Highly trusted! 💎</p>
+                <span class="vouch-robux">1,000,000 R$</span>
+            </div>
+            <!-- Vouch 3 -->
+            <div class="vouch-card">
+                <div class="vouch-header">
+                    <div class="vouch-avatar">A</div>
+                    <div class="vouch-name">ArifPlays</div>
+                </div>
+                <div class="vouch-stars">⭐⭐⭐⭐⭐</div>
+                <p class="vouch-text">Best Robux seller in Bangladesh hands down. Paid via Bkash, got my Robux instantly. No cap.</p>
+                <span class="vouch-robux">100,000 R$</span>
+            </div>
+            <!-- Vouch 4 -->
+            <div class="vouch-card">
+                <div class="vouch-header">
+                    <div class="vouch-avatar">T</div>
+                    <div class="vouch-name">TanzimRBX</div>
+                </div>
+                <div class="vouch-stars">⭐⭐⭐⭐⭐</div>
+                <p class="vouch-text">Was skeptical at first but this guy is legit. Ordered 10K as a test, now I'm a regular customer. 💪</p>
+                <span class="vouch-robux">10,000 R$</span>
+            </div>
+            <!-- Vouch 5 -->
+            <div class="vouch-card">
+                <div class="vouch-header">
+                    <div class="vouch-avatar">N</div>
+                    <div class="vouch-name">NafisGaming</div>
+                </div>
+                <div class="vouch-stars">⭐⭐⭐⭐⭐</div>
+                <p class="vouch-text">Ordered 500K Robux via Nagad. Everything went smooth. Support replied in under a minute on Discord!</p>
+                <span class="vouch-robux">500,000 R$</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section style="text-align: center; padding: 60px 20px;">
+        <div class="animate-on-scroll animate-scale">
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 15px;">
+                Ready to Get Your <span class="gradient-text">Robux</span>?
+            </h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px; font-size: 1.1rem;">
+                Join 500+ satisfied customers today
+            </p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-primary btn-lg">🚀 Get Started</a>
+                <a href="order.html" class="btn btn-purple btn-lg">🛒 Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-logo">💎 RENTAGONE 💎</div>
+        <p>&copy; 2025 RENTAGONE. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Discord</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
+              </html>
