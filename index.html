@@ -1,249 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RENTAGONE</title>
-
-<style>
-
-body{
-margin:0;
-background:#0b0b0b;
-color:white;
-font-family:Arial;
-scroll-behavior:smooth;
-}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:black;
-padding:15px;
-z-index:100;
-}
-
-nav{
-text-align:center;
-}
-
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero img{
-width:300px;
-}
-
-.hero h2{
-color:#00ffd0;
-font-weight:normal;
-}
-
-button{
-padding:12px 25px;
-background:#00ffd0;
-border:none;
-color:black;
-font-weight:bold;
-cursor:pointer;
-margin-top:20px;
-}
-
-section{
-padding:100px 20px;
-max-width:900px;
-margin:auto;
-}
-
-.card{
-background:#151515;
-padding:20px;
-margin:15px 0;
-border-radius:8px;
-}
-
-.price{
-font-size:20px;
-color:#00ffd0;
-}
-
-footer{
-text-align:center;
-padding:40px;
-background:black;
-margin-top:50px;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-
 <body>
-
 <header>
-<nav>
-<a href="#prices">Prices</a>
-<a href="#how">How To Buy</a>
-<a href="#calculator">Calculator</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
-</nav>
+  <h1>RENTAGONE</h1>
+  <p>💎 100 Robux = 75 BDT 💎</p>
 </header>
 
-<div class="hero">
-
-<img src="logo.png">
-
-<h2>Trusted Robux Marketplace</h2>
-
-<button onclick="document.getElementById('prices').scrollIntoView()">View Prices</button>
-
-</div>
-
-<section id="prices">
-
-<h1>Robux Prices</h1>
-
-<div class="card">
-100 Robux
-<div class="price">75 BDT</div>
-</div>
-
-<div class="card">
-500 Robux
-<div class="price">375 BDT</div>
-</div>
-
-<div class="card">
-1000 Robux
-<div class="price">750 BDT</div>
-</div>
-
-<div class="card">
-5000 Robux
-<div class="price">3750 BDT</div>
-</div>
-
-<div class="card">
-10000 Robux
-<div class="price">7500 BDT</div>
-</div>
-
+<section id="info">
+  <h2>How it Works</h2>
+  <ul>
+    <li>Join our Roblox group first: <a href="https://www.roblox.com/share/g/821984461" target="_blank">Join Group</a></li>
+    <li>Wait 14 days, then contact us</li>
+    <li>Payment Methods: Bkash, Nagad, Rocket, Crypto</li>
+    <li>Preorders allowed</li>
+  </ul>
 </section>
 
-<section id="how">
-
-<h1>How Buying Works</h1>
-
-<div class="card">
-1. Join our Roblox group
-</div>
-
-<div class="card">
-2. Wait 14 days to become payout eligible
-</div>
-
-<div class="card">
-3. Contact us on Discord
-</div>
-
-<div class="card">
-4. Send payment
-</div>
-
-<div class="card">
-5. Robux delivered same day
-</div>
-
-</section>
-
-<section id="calculator">
-
-<h1>Robux Calculator</h1>
-
-<input id="robuxInput" placeholder="Enter Robux amount">
-
-<button onclick="calc()">Calculate</button>
-
-<p id="result"></p>
-
-<script>
-
-function calc(){
-
-let r = document.getElementById("robuxInput").value
-let price = r * 0.75
-
-document.getElementById("result").innerText =
-"Price: " + price + " BDT"
-
-}
-
-</script>
-
-</section>
-
-<section id="faq">
-
-<h1>FAQ</h1>
-
-<div class="card">
-Payment methods: Bkash, Nagad, Rocket, Crypto
-</div>
-
-<div class="card">
-Delivery: Same day, usually instant
-</div>
-
-<div class="card">
-Preorders are allowed
-</div>
-
-<div class="card">
-Always confirm price before sending payment
-</div>
-
+<section id="vouches">
+  <h2>Customer Vouches</h2>
+  <div id="vouches-container">
+    <!-- Vouches will appear here -->
+  </div>
 </section>
 
 <section id="contact">
-
-<h1>Contact</h1>
-
-<div class="card">
-Discord: NAONIKO / ofensic67
-</div>
-
-<div class="card">
-<a href="https://discord.gg/vEsmfYv5xp">
-Join our Discord
-</a>
-</div>
-
-<div class="card">
-<a href="https://www.roblox.com/share/g/821984461">
-Join Roblox Group
-</a>
-</div>
-
+  <h2>Contact</h2>
+  <p>Discord: <a href="https://discord.gg/vEsmfYv5xp" target="_blank">Join Server</a></p>
+  <p>Discord Users: NAONIKO / ofensic67</p>
 </section>
 
-<footer>
-
-RENTAGONE
-
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
