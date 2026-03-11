@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENTAGONE - Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<h1>💎 RENTAGONE Dashboard 💎</h1>
+<p>Welcome, <span id="username">User</span>!</p>
+
+<h2>Your Orders</h2>
+<ul id="ordersList"></ul>
+
+<h2>Vouches</h2>
+<ul id="vouchesList"></ul>
+
+<button id="logout">Logout</button>
+
+<script>
+  const supabaseUrl = "https://cnfkccnjisytmzjugftc.supabase.co";
+  const supabaseKey = "sb_publishable_vxGaJqrwippDGNrRccqWOw_f6nRX2HW";
+  const supabase = Supabase.createClient(supabaseUrl, supabaseKey);
+
+  const userId = localStorage.getItem('userId');
+  const usernameSpan = document.getElementById('username');
+  const ordersList = document.getElementById('ordersList');
+  const vouchesList = document.getElementById('vouchesList');
+
+  async function loadData() {
+    if (!userId) {
+      window.location.href = 'login.html';
+      return;
+    }
+
+    const { data: user } = await supabase.from('users').select('*').eq('id', userId).single();
+    usernameSpan.textContent = user.username;
+
+    const { data: orders } = await supabase.from('orders').select('*').eq('user_id', userId);
+    orders.forEach(o => {
+      const li = document.createElement('li');
+      li.textContent = `Order ${o.id}: ${o.robux_amount} Robux - ${o.price} BDT - ${o.status}`;
+      ordersList.appendChild(li);
+    });
+
+    const { data: vouches } = await supabase.from('vouches').select('*').eq('user_id', userId);
+    vouches.forEach(v => {
+      const li = document.createElement('li');
+      li.textContent = `${v.comment} (${v.rating}/5)`;
+      vouchesList.appendChild(li);
+    });
+  }
+
+  loadData();
+
+  document.getElementById('logout').addEventListener('click', () => {
+    localStorage.removeItem('userId');
+    window.location.href = 'login.html';
+  });
+</script>
+</body>
+</html>
