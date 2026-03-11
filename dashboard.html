@@ -1,63 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RENTAGONE - Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - RENTAGONE</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>💎 RENTAGONE Dashboard 💎</h1>
-<p>Welcome, <span id="username">User</span>!</p>
 
-<h2>Your Orders</h2>
-<ul id="ordersList"></ul>
+    <div class="particles" id="particles"></div>
+    <div class="toast-container" id="toastContainer"></div>
 
-<h2>Vouches</h2>
-<ul id="vouchesList"></ul>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">💎 RENTAGONE</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+        <div class="nav-btns">
+            <button class="btn btn-secondary btn-sm" id="logoutBtn">Logout</button>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
 
-<button id="logout">Logout</button>
+    <!-- Dashboard Content -->
+    <div class="dashboard" style="padding: 100px 40px 60px;">
 
-<script>
-  const supabaseUrl = "https://cnfkccnjisytmzjugftc.supabase.co";
-  const supabaseKey = "sb_publishable_vxGaJqrwippDGNrRccqWOw_f6nRX2HW";
-  const supabase = Supabase.createClient(supabaseUrl, supabaseKey);
+        <!-- Welcome Header -->
+        <div class="dash-header animate-on-scroll">
+            <div class="dash-welcome">
+                <h1>Welcome, <span class="gradient-text" id="dashUsername">User</span> 👋</h1>
+                <p>Manage your orders and profile</p>
+            </div>
+            <a href="order.html" class="btn btn-primary">🛒 New Order</a>
+        </div>
 
-  const userId = localStorage.getItem('userId');
-  const usernameSpan = document.getElementById('username');
-  const ordersList = document.getElementById('ordersList');
-  const vouchesList = document.getElementById('vouchesList');
+        <!-- Stats Cards -->
+        <div class="dash-grid">
+            <!-- Profile Card -->
+            <div class="dash-card animate-on-scroll animate-delay-1">
+                <h3>👤 Profile Info</h3>
+                <div class="profile-info">
+                    <div class="profile-row">
+                        <span class="label">Username</span>
+                        <span class="value" id="profileUsername">-</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Email</span>
+                        <span class="value" id="profileEmail">-</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Discord</span>
+                        <span class="value" id="profileDiscord">-</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Roblox</span>
+                        <span class="value" id="profileRoblox">-</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Joined</span>
+                        <span class="value" id="profileJoined">-</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Role</span>
+                        <span class="value" id="profileRole">-</span>
+                    </div>
+                </div>
+            </div>
 
-  async function loadData() {
-    if (!userId) {
-      window.location.href = 'login.html';
-      return;
-    }
+            <!-- Quick Stats Card -->
+            <div class="dash-card animate-on-scroll animate-delay-2">
+                <h3>📊 Your Stats</h3>
+                <div class="profile-info">
+                    <div class="profile-row">
+                        <span class="label">Total Orders</span>
+                        <span class="value" id="statTotalOrders">0</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Pending Orders</span>
+                        <span class="value" id="statPendingOrders" style="color: var(--yellow);">0</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Completed</span>
+                        <span class="value" id="statCompletedOrders" style="color: var(--green);">0</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Total Robux Ordered</span>
+                        <span class="value" id="statTotalRobux" style="color: var(--cyan);">0</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="label">Total Spent</span>
+                        <span class="value" id="statTotalSpent" style="color: var(--purple);">৳0</span>
+                    </div>
+                </div>
+            </div>
 
-    const { data: user } = await supabase.from('users').select('*').eq('id', userId).single();
-    usernameSpan.textContent = user.username;
+            <!-- Group Status Card -->
+            <div class="dash-card animate-on-scroll animate-delay-3">
+                <h3>🎮 Group Status</h3>
+                <div style="text-align: center; padding: 20px 0;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">⏳</div>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">
+                        Group verification coming soon. For now, join the group via Discord and wait 14 days.
+                    </p>
+                    <a href="#" class="btn btn-secondary btn-sm">Join Discord Server</a>
+                </div>
+            </div>
+        </div>
 
-    const { data: orders } = await supabase.from('orders').select('*').eq('user_id', userId);
-    orders.forEach(o => {
-      const li = document.createElement('li');
-      li.textContent = `Order ${o.id}: ${o.robux_amount} Robux - ${o.price} BDT - ${o.status}`;
-      ordersList.appendChild(li);
-    });
-
-    const { data: vouches } = await supabase.from('vouches').select('*').eq('user_id', userId);
-    vouches.forEach(v => {
-      const li = document.createElement('li');
-      li.textContent = `${v.comment} (${v.rating}/5)`;
-      vouchesList.appendChild(li);
-    });
-  }
-
-  loadData();
-
-  document.getElementById('logout').addEventListener('click', () => {
-    localStorage.removeItem('userId');
-    window.location.href = 'login.html';
-  });
-</script>
-</body>
-</html>
+        <!-- Orders History -->
+        <div class="dash-card animate-on-scroll" style="margin-bottom: 40px;">
+            <h3>📦 Order History</h3>
+            <div style="overflow-x: auto;">
+                <table class="orders-table" id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Robux</th>
+                            <th>Price (BDT)</th>
+                            <th>Payment</th>
+                            <th>Type</th>
+                            <th
