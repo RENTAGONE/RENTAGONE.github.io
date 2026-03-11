@@ -4,17 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>💎 RENTAGONE 💎</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* === Basic Styles === */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+    }
+    a { color: #00ffff; text-decoration: none; }
+    header, section, footer { padding: 20px; max-width: 800px; margin: auto; }
+    h1, h2 { color: #00ffff; }
+    input[type=number] { width: 100px; padding: 5px; margin-left: 10px; }
+    .section-box { margin-bottom: 40px; }
+    .vouch { border-bottom: 1px solid #333; padding: 10px 0; }
+    footer { text-align: center; color: #888; padding: 20px 0; border-top: 1px solid #333; }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="fade-in">
+
+  <!-- HEADER -->
+  <header class="section-box">
     <h1>💎 RENTAGONE 💎</h1>
     <p>100 Robux = 75 BDT</p>
   </header>
 
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="fade-in">
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="section-box">
     <h2>How it Works</h2>
     <ol>
       <li>Join our Roblox group first: <a href="https://www.roblox.com/share/g/821984461" target="_blank">Join Group</a></li>
@@ -24,35 +41,67 @@
     </ol>
   </section>
 
-  <!-- Robux Calculator -->
-  <section id="robux-calculator" class="fade-in">
+  <!-- ROBUX CALCULATOR -->
+  <section id="robux-calculator" class="section-box">
     <h2>Robux Calculator</h2>
     <label for="robux">Enter Robux amount:</label>
-    <input type="number" id="robux" placeholder="0">
+    <input type="number" id="robux" placeholder="0" min="0">
     <p>Price in BDT: <span id="price">0.00</span> Tk</p>
   </section>
 
-  <!-- Customer Vouches -->
-  <section id="vouches" class="fade-in">
+  <!-- CUSTOMER VOUCHES -->
+  <section id="vouches" class="section-box">
     <h2>Customer Vouches</h2>
     <div id="vouch-list">
-      <p>Denolserl: Got my 160 Robux quickly, smooth! (5/5)</p>
-      <p>Denotiser2: 560 Robux delivered, happy customer! (5/5)</p>
+      <div class="vouch"><strong>Denolserl:</strong> Got my 160 Robux quickly, smooth! (5/5)</div>
+      <div class="vouch"><strong>Denotiser2:</strong> 560 Robux delivered, happy customer! (5/5)</div>
+      <!-- You can add more demo vouches here -->
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="fade-in">
+  <!-- FAQ SECTION (Placeholder) -->
+  <section id="faq" class="section-box">
+    <h2>FAQ</h2>
+    <p>Coming soon: frequently asked questions and answers about Robux purchases and preorders.</p>
+  </section>
+
+  <!-- TERMS OF SERVICE -->
+  <section id="terms" class="section-box">
+    <h2>Terms of Service</h2>
+    <p>Coming soon: rules, privacy, and policies.</p>
+  </section>
+
+  <!-- REFUND POLICY -->
+  <section id="refunds" class="section-box">
+    <h2>Refund Policy</h2>
+    <p>Coming soon: full refund rules and procedures.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-box">
     <h2>Contact</h2>
     <p>Discord: <a href="https://discord.gg/vEsmfYv5xp" target="_blank">Join Server</a></p>
     <p>Discord Users: NAONIKO / ofensic67</p>
   </section>
 
-  <!-- Optional Footer -->
-  <footer class="fade-in">
+  <!-- FOOTER -->
+  <footer>
     <p>© 2026 RENTAGONE</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- === SCRIPT.JS CONTENT === -->
+  <script>
+    // Robux Calculator
+    const robuxInput = document.getElementById('robux');
+    const priceSpan = document.getElementById('price');
+    const rate = 75 / 100; // 100 Robux = 75 BDT
+
+    robuxInput.addEventListener('input', () => {
+      let robux = parseFloat(robuxInput.value) || 0;
+      let price = robux * rate;
+      priceSpan.textContent = price.toFixed(2);
+    });
+  </script>
+
 </body>
 </html>
