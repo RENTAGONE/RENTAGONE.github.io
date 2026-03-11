@@ -1,173 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>RENTAGONE</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💎 RENTAGONE 💎</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-<header class="hero">
-
-<h1>💎 RENTAGONE 💎</h1>
-
-<p class="tagline">
-Cheapest Robux • Fast Delivery • Trusted
-</p>
-
-<a href="#calculator">
-<button class="mainbtn">Calculate Price</button>
-</a>
-
+<header class="header">
+  <h1>💎 RENTAGONE 💎</h1>
+  <p>Cheapest Robux • Fast Delivery • Trusted</p>
 </header>
 
-
-
-<section class="section">
-
-<h2>Why Choose Us</h2>
-
-<div class="features">
-
-<div class="card">
-<h3>Lowest Prices</h3>
-<p>100 Robux = 75 BDT</p>
-</div>
-
-<div class="card">
-<h3>Fast Delivery</h3>
-<p>Most orders completed within minutes.</p>
-</div>
-
-<div class="card">
-<h3>Trusted</h3>
-<p>Hundreds of successful deliveries.</p>
-</div>
-
-</div>
-
+<section class="features animate">
+  <h2>Why Choose Us</h2>
+  <div class="cards">
+    <div class="card">Lowest Prices<br>100 Robux = 75 BDT</div>
+    <div class="card">Fast Delivery<br>Most orders completed within minutes.</div>
+    <div class="card">Trusted<br>Hundreds of successful deliveries.</div>
+  </div>
 </section>
 
-
-
-<section id="calculator" class="section">
-
-<h2>Robux Calculator</h2>
-
-<p>You can type values like:</p>
-
-<p class="examples">1k • 50k • 1m • 1b</p>
-
-<input id="robuxInput" placeholder="Enter Robux">
-
-<p class="price">
-Price: <span id="price">0</span> BDT
-</p>
-
+<section class="calculator animate">
+  <h2>Robux Calculator</h2>
+  <p>You can type values like: 1k • 50k • 1m • 1b</p>
+  <input type="text" id="robuxInput" placeholder="Enter Robux">
+  <p>Price: <span id="priceDisplay">0.00 BDT</span></p>
 </section>
 
-
-
-<section class="section">
-
-<h2>How Ordering Works</h2>
-
-<ol class="steps">
-
-<li>Join our Roblox group</li>
-
-<li>Wait 14 days</li>
-
-<li>Place order on website</li>
-
-<li>Pay with Bkash / Nagad / Crypto</li>
-
-<li>Receive Robux</li>
-
-</ol>
-
+<section class="ordering animate">
+  <h2>How Ordering Works</h2>
+  <ol>
+    <li>Join our Roblox group</li>
+    <li>Wait 14 days</li>
+    <li>Place order on website</li>
+    <li>Pay with Bkash / Nagad / Crypto</li>
+    <li>Receive Robux</li>
+  </ol>
+  <div class="buttons">
+    <a href="login.html"><button>Login / Register</button></a>
+    <a href="order.html"><button>Place Order</button></a>
+    <a href="dashboard.html"><button>Dashboard</button></a>
+  </div>
 </section>
 
-
-
-<section class="section">
-
-<h2>Place Order</h2>
-
-<div class="orderbox">
-
-<input id="siteUser" placeholder="Website Username">
-
-<input id="robloxUser" placeholder="Roblox Username">
-
-<input id="discordUser" placeholder="Discord Username">
-
-<input id="orderAmount" placeholder="Robux Amount">
-
-<select id="paymentMethod">
-
-<option>Bkash</option>
-<option>Nagad</option>
-<option>Rocket</option>
-<option>Crypto</option>
-
-</select>
-
-<button onclick="sendOrder()">Submit Order</button>
-
-</div>
-
+<section class="vouches animate">
+  <h2>Customer Vouches</h2>
+  <div class="vouch" data-delay="0">⭐ Denolserl — Fast delivery 160 Robux</div>
+  <div class="vouch" data-delay="200">⭐ Denotiser2 — 560 Robux delivered</div>
 </section>
 
-
-
-<section class="section">
-
-<h2>Customer Vouches</h2>
-
-<div class="vouchbox">
-
-<p>⭐ Denolserl — Fast delivery 160 Robux</p>
-
-<p>⭐ Denotiser2 — 560 Robux delivered</p>
-
-<p>⭐ More vouches coming soon</p>
-
-</div>
-
+<section class="contact animate">
+  <h2>Contact</h2>
+  <p>Discord Users:</p>
+  <ul>
+    <li>NAONIKO</li>
+    <li>ofensic67</li>
+  </ul>
+  <a href="https://discord.gg/vEsmfYv5xp"><button>Join Server</button></a>
 </section>
-
-
-
-<section class="section">
-
-<h2>Contact</h2>
-
-<p>Discord Users:</p>
-
-<p>NAONIKO</p>
-
-<p>ofensic67</p>
-
-</section>
-
-
 
 <footer>
-
-<p>© 2026 RENTAGONE</p>
-
+  <p>© 2026 RENTAGONE</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
