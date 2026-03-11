@@ -1,125 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💎 RENTAGONE 💎</title>
-  <style>
-    /* === Basic Styles === */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
-    }
-    a { color: #00ffff; text-decoration: none; }
-    header, section, footer { padding: 20px; max-width: 800px; margin: auto; }
-    h1, h2 { color: #00ffff; }
-    input[type=number] { width: 100px; padding: 5px; margin-left: 10px; }
-    .section-box { margin-bottom: 40px; }
-    .vouch { border-bottom: 1px solid #333; padding: 10px 0; }
-    footer { text-align: center; color: #888; padding: 20px 0; border-top: 1px solid #333; }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RENTAGONE</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="section-box">
-    <h1>💎 RENTAGONE 💎</h1>
-    <p>100 Robux = 75 BDT</p>
-  </header>
+<header>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="section-box">
-    <h2>How it Works</h2>
-    <ol>
-      <li>Join our Roblox group first: <a href="https://www.roblox.com/share/g/821984461" target="_blank">Join Group</a></li>
-      <li>Wait 14 days, then contact us</li>
-      <li>Payment Methods: Bkash, Nagad, Rocket, Crypto</li>
-      <li>Preorders allowed</li>
-    </ol>
-  </section>
+<h1>💎 RENTAGONE 💎</h1>
+<p>100 Robux = 75 BDT</p>
 
-  <!-- ROBUX CALCULATOR -->
-  <section id="robux-calculator" class="section-box">
-    <h2>Robux Calculator</h2>
-    <label for="robux">Enter Robux amount:</label>
-    <input type="number" id="robux" placeholder="0" min="0">
-    <p>Price in BDT: <span id="price">0.00</span> Tk</p>
-  </section>
+</header>
 
-  <!-- CUSTOMER VOUCHES -->
-  <section id="vouches" class="section-box">
-    <h2>Customer Vouches</h2>
-    <div id="vouch-list">
-      <div class="vouch"><strong>Denolserl:</strong> Got my 160 Robux quickly, smooth! (5/5)</div>
-      <div class="vouch"><strong>Denotiser2:</strong> 560 Robux delivered, happy customer! (5/5)</div>
-      <!-- You can add more demo vouches here -->
-    </div>
-  </section>
 
-  <!-- FAQ SECTION (Placeholder) -->
-  <section id="faq" class="section-box">
-    <h2>FAQ</h2>
-    <p>Coming soon: frequently asked questions and answers about Robux purchases and preorders.</p>
-  </section>
+<section>
 
-  <!-- TERMS OF SERVICE -->
-  <section id="terms" class="section-box">
-    <h2>Terms of Service</h2>
-    <p>Coming soon: rules, privacy, and policies.</p>
-  </section>
+<h2>How it Works</h2>
 
-  <!-- REFUND POLICY -->
-  <section id="refunds" class="section-box">
-    <h2>Refund Policy</h2>
-    <p>Coming soon: full refund rules and procedures.</p>
-  </section>
+<p>Join our Roblox group first: <a href="#">Join Group</a></p>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section-box">
-    <h2>Contact</h2>
-    <p>Discord: <a href="https://discord.gg/vEsmfYv5xp" target="_blank">Join Server</a></p>
-    <p>Discord Users: NAONIKO / ofensic67</p>
-  </section>
+<p>Wait 14 days, then contact us</p>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 RENTAGONE</p>
-  </footer>
+<p>Payment Methods: Bkash, Nagad, Rocket, Crypto</p>
 
-  <!-- === SCRIPT.JS CONTENT === -->
-  <script>
-    // Robux Calculator
-    const robuxInput = document.getElementById('robux');
-    const priceSpan = document.getElementById('price');
-    const rate = 75 / 100; // 100 Robux = 75 BDT
+<p>Preorders allowed</p>
 
-    robuxInput.addEventListener('input', () => {
-      let robux = parseFloat(robuxInput.value) || 0;
-      let price = robux * rate;
-      priceSpan.textContent = price.toFixed(2);
-    });
-  </script>
+</section>
 
-</body>
-</html>
-<section id="order">
+
+<section>
+
+<h2>Robux Calculator</h2>
+
+<label>Enter Robux amount:</label>
+
+<input id="robux" type="number" placeholder="0">
+
+<p>Price in BDT: <span id="price">0.00</span> Tk</p>
+
+</section>
+
+
+<section>
+
+<h2>Customer Vouches</h2>
+
+<p>Denolserl: Got my 160 Robux quickly, smooth! (5/5)</p>
+
+<p>Denotiser2: 560 Robux delivered, happy customer! (5/5)</p>
+
+</section>
+
+
+<section>
 
 <h2>Buy Robux</h2>
 
-<input id="username" placeholder="Website Username"><br><br>
+<input id="username" placeholder="Website Username">
 
-<input id="discord" placeholder="Discord Username"><br><br>
+<br><br>
 
-<input id="orderRobux" placeholder="Robux Amount"><br><br>
+<input id="discord" placeholder="Discord Username">
+
+<br><br>
+
+<input id="orderRobux" placeholder="Robux Amount">
+
+<br><br>
 
 <select id="payment">
+
 <option>Bkash</option>
 <option>Nagad</option>
 <option>Rocket</option>
 <option>Crypto</option>
+
 </select>
 
 <br><br>
@@ -127,3 +89,54 @@
 <button onclick="sendOrder()">Submit Order</button>
 
 </section>
+
+
+<section>
+
+<h2>FAQ</h2>
+
+<p>Coming soon: frequently asked questions and answers about Robux purchases and preorders.</p>
+
+</section>
+
+
+<section>
+
+<h2>Terms of Service</h2>
+
+<p>Coming soon: rules, privacy, and policies.</p>
+
+</section>
+
+
+<section>
+
+<h2>Refund Policy</h2>
+
+<p>Coming soon: full refund rules and procedures.</p>
+
+</section>
+
+
+<section>
+
+<h2>Contact</h2>
+
+<p>Discord: Join Server</p>
+
+<p>Discord Users: NAONIKO / ofensic67</p>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 RENTAGONE</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
