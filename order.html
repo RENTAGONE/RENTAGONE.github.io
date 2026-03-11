@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENTAGONE - Order</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<h1>💎 Place Your Order 💎</h1>
+
+<form id="orderForm">
+  <label>Robux Amount:</label><br>
+  <input type="number" id="robux" required><br>
+
+  <label>Order Type:</label><br>
+  <select id="orderType">
+    <option value="preorder">Preorder</option>
+    <option value="order">Order</option>
+  </select><br>
+
+  <label>Payment Method:</label><br>
+  <select id="payment">
+    <option value="bkash">Bkash</option>
+    <option value="nagad">Nagad</option>
+    <option value="rocket">Rocket</option>
+    <option value="crypto">Crypto</option>
+  </select><br>
+
+  <button type="submit">Place Order</button>
+</form>
+
+<p id="status"></p>
+
+<script>
+  const supabaseUrl = "https://cnfkccnjisytmzjugftc.supabase.co";
+  const supabaseKey = "sb_publishable_vxGaJqrwippDGNrRccqWOw_f6nRX2HW";
+  const supabase = Supabase.createClient(supabaseUrl, supabaseKey);
+
+  const userId = localStorage.getItem('userId');
+  const form = document.getElementById('orderForm');
+  const status = document.getElementById('status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const robux_amount = document.getElementById('robux').value;
+    const order_type = document.getElementById('orderType').value;
+    const payment = document.getElementById('payment').value;
+
+    const { data, error } = await supabase
+      .from('orders')
+      .insert([{ user_id: userId, robux_amount, order_type, payment, status: 'pending' }]);
+
+    if (error) {
+      status.textContent = "❌ " + error.message;
+    } else {
+      status.textContent = "✅ Order placed!";
+    }
+  });
+</script>
+</body>
+</html>
