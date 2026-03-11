@@ -1,81 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>RENTAGONE</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
-<header>
+<header class="hero">
 
 <h1>💎 RENTAGONE 💎</h1>
-<p>100 Robux = 75 BDT</p>
+
+<p class="tagline">
+Cheapest Robux • Fast Delivery • Trusted
+</p>
+
+<a href="#calculator">
+<button class="mainbtn">Calculate Price</button>
+</a>
 
 </header>
 
 
-<section>
 
-<h2>How it Works</h2>
+<section class="section">
 
-<p>Join our Roblox group first: <a href="#">Join Group</a></p>
+<h2>Why Choose Us</h2>
 
-<p>Wait 14 days, then contact us</p>
+<div class="features">
 
-<p>Payment Methods: Bkash, Nagad, Rocket, Crypto</p>
+<div class="card">
+<h3>Lowest Prices</h3>
+<p>100 Robux = 75 BDT</p>
+</div>
 
-<p>Preorders allowed</p>
+<div class="card">
+<h3>Fast Delivery</h3>
+<p>Most orders completed within minutes.</p>
+</div>
+
+<div class="card">
+<h3>Trusted</h3>
+<p>Hundreds of successful deliveries.</p>
+</div>
+
+</div>
 
 </section>
 
 
-<section>
+
+<section id="calculator" class="section">
 
 <h2>Robux Calculator</h2>
 
-<label>Enter Robux amount:</label>
+<p>You can type values like:</p>
 
-<input id="robux" type="number" placeholder="0">
+<p class="examples">1k • 50k • 1m • 1b</p>
 
-<p>Price in BDT: <span id="price">0.00</span> Tk</p>
+<input id="robuxInput" placeholder="Enter Robux">
 
-</section>
-
-
-<section>
-
-<h2>Customer Vouches</h2>
-
-<p>Denolserl: Got my 160 Robux quickly, smooth! (5/5)</p>
-
-<p>Denotiser2: 560 Robux delivered, happy customer! (5/5)</p>
+<p class="price">
+Price: <span id="price">0</span> BDT
+</p>
 
 </section>
 
 
-<section>
 
-<h2>Buy Robux</h2>
+<section class="section">
 
-<input id="username" placeholder="Website Username">
+<h2>How Ordering Works</h2>
 
-<br><br>
+<ol class="steps">
 
-<input id="discord" placeholder="Discord Username">
+<li>Join our Roblox group</li>
 
-<br><br>
+<li>Wait 14 days</li>
 
-<input id="orderRobux" placeholder="Robux Amount">
+<li>Place order on website</li>
 
-<br><br>
+<li>Pay with Bkash / Nagad / Crypto</li>
 
-<select id="payment">
+<li>Receive Robux</li>
+
+</ol>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Place Order</h2>
+
+<div class="orderbox">
+
+<input id="siteUser" placeholder="Website Username">
+
+<input id="robloxUser" placeholder="Roblox Username">
+
+<input id="discordUser" placeholder="Discord Username">
+
+<input id="orderAmount" placeholder="Robux Amount">
+
+<select id="paymentMethod">
 
 <option>Bkash</option>
 <option>Nagad</option>
@@ -84,49 +120,44 @@
 
 </select>
 
-<br><br>
-
 <button onclick="sendOrder()">Submit Order</button>
 
-</section>
-
-
-<section>
-
-<h2>FAQ</h2>
-
-<p>Coming soon: frequently asked questions and answers about Robux purchases and preorders.</p>
+</div>
 
 </section>
 
 
-<section>
 
-<h2>Terms of Service</h2>
+<section class="section">
 
-<p>Coming soon: rules, privacy, and policies.</p>
+<h2>Customer Vouches</h2>
+
+<div class="vouchbox">
+
+<p>⭐ Denolserl — Fast delivery 160 Robux</p>
+
+<p>⭐ Denotiser2 — 560 Robux delivered</p>
+
+<p>⭐ More vouches coming soon</p>
+
+</div>
 
 </section>
 
 
-<section>
 
-<h2>Refund Policy</h2>
-
-<p>Coming soon: full refund rules and procedures.</p>
-
-</section>
-
-
-<section>
+<section class="section">
 
 <h2>Contact</h2>
 
-<p>Discord: Join Server</p>
+<p>Discord Users:</p>
 
-<p>Discord Users: NAONIKO / ofensic67</p>
+<p>NAONIKO</p>
+
+<p>ofensic67</p>
 
 </section>
+
 
 
 <footer>
@@ -135,8 +166,8 @@
 
 </footer>
 
-
 <script src="script.js"></script>
 
 </body>
+
 </html>
